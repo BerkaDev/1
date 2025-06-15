@@ -1,2 +1,3 @@
-local m=peripheral.find("monitor") m.setTextScale(1) local w,h=m.getSize()
-local l=w//2-3 r=w//2+2 while true do m.clear() m.setCursorPos(l,h//2) m.setTextColor(colors.white) m.write("O   O") sleep(0.3) m.setCursorPos(l,h//2) m.write("-   -") sleep(0.15) end
+local m = peripheral.find("monitor") m.setTextScale(0.5) local w,h=m.getSize()
+local colors={colors.red,colors.orange,colors.yellow,colors.green,colors.cyan,colors.blue,colors.purple}
+while true do for y=1,h do m.setCursorPos(1,y) m.setBackgroundColor(colors[(y+os.clock()*4)%#colors+1]) m.write((" "):rep(w)) end sleep(0.09) end
